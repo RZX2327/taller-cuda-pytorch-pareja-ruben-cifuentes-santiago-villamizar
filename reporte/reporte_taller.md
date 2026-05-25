@@ -44,6 +44,11 @@
 - Verificar que PyTorch reconoce la GPU y mostrar el nombre del dispositivo.
 - Ejecutar `nvidia-smi` para ver el estado de la GPU, igual que en el tutorial de instalación.
 
+![alt text](./Assets/11.jpeg)
+
+
+![alt text](./Assets/12.jpeg)
+
 ### Preguntas
 
 1. La salida de `nvidia-smi` muestra campos como *Driver Version*, *Memory Usage* y *GPU-Util*. ¿Qué indica cada uno?
@@ -70,6 +75,8 @@
 - Comparar las operaciones de CUDA en C con su equivalente en PyTorch.
 - Entender cómo se mueven tensores entre CPU y GPU con `.to('cuda')`.
 - Definir el dispositivo al inicio del proyecto para que el código funcione con o sin GPU.
+
+![alt text](./Assets/13.jpeg)
 
 ### Preguntas
 
@@ -98,6 +105,10 @@ Diagramen en Excalidraw el flujo de un tensor desde que se crea en CPU hasta que
 - Aplicar transformaciones para convertir las imágenes a tensores y normalizarlas.
 - Visualizar una muestra del dataset para entender qué se va a clasificar.
 
+![alt text](./Assets/14.jpeg)
+
+![alt text](./Assets/15.jpeg)
+
 ### Preguntas
 
 1. El dataset se divide en 60,000 imágenes de entrenamiento y 10,000 de prueba. ¿Por qué no se entrena con todas las 70,000? Propongan una analogía con estudiar para un examen.
@@ -125,6 +136,8 @@ Diagramen en Excalidraw el flujo de un tensor desde que se crea en CPU hasta que
 - Definir la arquitectura: capa de entrada (784), dos capas ocultas (256 y 128), capa de salida (10 dígitos).
 - Mover el modelo a la GPU con `.to(device)`.
 - Contar el total de parámetros entrenables de la red.
+
+![alt text](./Assets/16.jpeg)
 
 ### Preguntas
 
@@ -211,6 +224,12 @@ def entrenar_con_loss(modelo, train_loader, test_loader, dispositivo, title, epo
     return historico_train, historico_test, tiempo
 ```
 
+![alt text](./Assets/17.jpeg)
+
+![alt text](./Assets/18.jpeg)
+
+![alt text](./Assets/19.jpeg)
+
 ### Preguntas
 
 1. Registren aquí los tiempos obtenidos. ¿El resultado coincidió con la predicción que hicieron en la sección 0? ¿Qué los sorprendió?
@@ -271,6 +290,11 @@ Antes de responder, observen su gráfica generada y usen esta escala para interp
 
 - Calcular la precisión del modelo sobre los datos de prueba que nunca vio durante el entrenamiento.
 - Visualizar predicciones reales con indicadores de acierto (verde) y error (rojo).
+
+![alt text](./Assets/20.jpeg)
+
+
+![alt text](./Assets/22.jpeg)
 
 ### Preguntas
 
@@ -390,6 +414,7 @@ print(f'El modelo CPU predice: {prediccion}')
     Falta de invariancia espacial: Al ser una red densa (nn.Linear), si dibujas el número un poco más pequeño, más grueso, o desplazado hacia una esquina de la foto, el modelo colapsará. Carece de la capacidad de entender "conceptos" abstractos; solo reconoce mapas de coincidencia de píxeles rígidos.
 4. Tomar captura, de almenos una predicción que se haya hecho correctamente.
   ![](./Assets/4.jpg)
+  ![alt text](./Assets/21.jpeg)
 
 Va justo después de la celda que compara CPU vs GPU. El enunciado:
 
